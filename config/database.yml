@@ -22,3 +22,4 @@ test:
 
 production:
   adapter: postgresql
+  database: c7fq3lb64r6_production
