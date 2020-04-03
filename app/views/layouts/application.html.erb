@@ -29,10 +29,21 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Gastos <span class="sr-only">(current)</span></a></li>
           </ul>
+          <% if signed_in? %>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Salir", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          <% else %>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Registrarse", new_user_registration_path %></li>
+            </ul>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Ingresar", new_user_session_path %></li>
+            </ul>
+          <% end %>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-
     <%= yield %>
   </body>
 </html>
